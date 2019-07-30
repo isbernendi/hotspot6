@@ -2,7 +2,7 @@
 <html>
 
 <head>
-   <title>hotspot > Login</title>
+  <title>Login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="theme-color" content="#3B5998" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
@@ -12,23 +12,7 @@
 
 <body>
  
-        <form name="sendin" action="$(link-login-only)" method="post">
-            <input type="hidden" name="username" />
-            <input type="hidden" name="password" />
-            <input type="hidden" name="dst" value="$(link-orig)" />
-            <input type="hidden" name="popup" value="true" />
-        </form>
-
-        <script type="text/javascript" src="md5.js"></script>
-        <script type="text/javascript">
-            function doLogin() {
-                document.sendin.username.value = document.login.username.value;
-                document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
-                    '$(chap-challenge)');
-                document.sendin.submit();
-                return false;
-            }
-        </script>
+   
       
 
             <div id="main" class="main">
@@ -44,18 +28,18 @@
             </div>
             <div class="box" id="infologin">
             </div>
-            <form autocomplete="off" name="login" action="" method="post" $(if chap-id) onSubmit="return doLogin()"
+            <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
                 $(endif)>
                 <input type="hidden" name="dst" value="$(link-orig)" />
                 <input type="hidden" name="popup" value="true" />
                 <input class="username" name="username" type="text" value="" />
                 <input class="password" name="password" placeholder="Password" type="hidden" />
 
-                <button class="button" ><i class="icon icon-login">&#xe803;</i> Login</button>
+             
 
             </form>
 
-     
+       <button class="button" ><i class="icon icon-login">&#xe803;</i> Login</button>
             <div class="box">Mau template klik  <a href="https://github.com/laksa19/template-hotspot-mikhmon/archive/master.zip"><b><font color="#800000"> Download</b></font></a></div>
       
 
@@ -103,7 +87,7 @@
 
 <script type="text/javascript">
 var hostname = window.location.hostname;
-document.getElementById('title').innerHTML = hostname  + " > login";
+document.getElementById('title').innerHTML = hostname  + " > ";
 
 document.login.username.focus();
 
